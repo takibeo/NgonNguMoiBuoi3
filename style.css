@@ -1,0 +1,53 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: center;
+}
+
+/* Dòng lẻ: trắng */
+tbody tr:nth-child(odd) {
+  background-color: white;
+}
+
+/* Dòng chẵn: đen */
+tbody tr:nth-child(even) {
+  background-color: black;
+  color: white;
+}
+
+/* Ảnh hiển thị toàn bộ */
+td img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain; /* không bị cắt hình */
+  background: white;
+}
+.title-cell {
+  position: relative;
+  cursor: pointer;
+}
+
+/* Ẩn description */
+.desc-tooltip {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #333;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  width: 250px;
+  text-align: left;
+  z-index: 10;
+}
+
+/* Hover thì hiện */
+.title-cell:hover .desc-tooltip {
+  display: block;
+}

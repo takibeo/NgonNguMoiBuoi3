@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard Products</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Danh sách sản phẩm</h2>
+<input 
+  type="text" 
+  id="searchInput" 
+  placeholder="Tìm theo tên sản phẩm..."
+  oninput="searchByTitle()"
+  >
+  <label>
+  Hiển thị:
+  <select id="pageSize" onchange="changePageSize()">
+    <option value="5">5</option>
+    <option value="10" selected>10</option>
+    <option value="20">20</option>
+  </select>
+  sản phẩm / trang
+</label>
+
+<div id="pagination"></div>
+<table>
+ <thead>
+  <tr>
+    <th>ID</th>
+    <th onclick="sortByTitle()" style="cursor:pointer">
+      Tên ⬍
+    </th>
+    <th onclick="sortByPrice()" style="cursor:pointer">
+      Giá ⬍
+    </th>
+    <th>Hình</th>
+  </tr>
+</thead>
+  <tbody id="product-body"></tbody>
+</table>
+
+<script src="script.js"></script>
+</body>
+</html>
